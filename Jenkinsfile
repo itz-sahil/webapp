@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Copying code to LAMP Server') {
             steps {
-                sh 'scp -i /home/ubuntu/jenkins-key.pem /var/lib/jenkins/workspace/job8/index.html ubuntu@172.31.19.44:/var/www/html/index.html'
+                sh 'scp -i ../../jenkins-key.pem /var/lib/jenkins/workspace/job8/index.html ubuntu@172.31.19.44:/var/www/html/index.html'
             }
         }
     }
