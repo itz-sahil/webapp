@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('GitHub Code Pull') {
+            steps {
+                git branch: 'main', url: 'https://github.com/itz-sahil/webapp.git'
+            }
+        }
+        stage('Copying code to LAMP Server') {
+            steps {
+                sh 'scp -i ../../jenkins-key.pem /var/lib/jenkins/workspace/job8/index.html ubuntu@54.169.5.182:/var/www/html/index.html'
+            }
+        }
+    }
+}
